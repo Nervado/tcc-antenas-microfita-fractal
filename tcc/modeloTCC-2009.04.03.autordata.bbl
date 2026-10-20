@@ -1,0 +1,76 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.45.2.1 }
+
+\bibitem[Balanis 2005]{ref1}
+\abntrefinfo{Balanis}{BALANIS}{2005}
+{BALANIS, C.~A. \emph{Antenna Theory: Analysis and Design}. 3. ed. New
+  Jersey,USA: John Wiley \& Sons, Inc., 2005.}
+
+\bibitem[Bdrore 2004]{ref7}
+\abntrefinfo{Bdrore}{BDRORE}{2004}
+{BDRORE, J.~S. A wire model for the sierpinski gasket type monopole antenna and
+  a truly broadband bent-wire antenna.
+\emph{Student Conference on Research and Development (SCOReD 2006)}, Ottawa,
+  Canada, p. 20--24, 10 Jul. 2004.}
+
+\bibitem[Elkamchouchi e Abouelseoud 2004]{ref3}
+\abntrefinfo{Elkamchouchi e Abouelseoud}{ELKAMCHOUCHI; ABOUELSEOUD}{2004}
+{ELKAMCHOUCHI, H.~M.; ABOUELSEOUD, G. A compact broadband sierfwinski gasket
+  patch microstrip antenna.
+\emph{National Radio Science Conference (NRSC2004)}, Cairo, Egito, p. 110--114,
+  16 mar. 2004.}
+
+\bibitem[Hamzah et al. 2006]{ref6}
+\abntrefinfo{Hamzah et al.}{HAMZAH et al.}{2006}
+{HAMZAH, S.~A. et al. Design, simulation, fabrication and measurement of a
+  900mhz koch fractal dipole antenna.
+\emph{Student Conference on Research and Development (SCOReD 2006)}, Shah Alam,
+  Selangor, MALAYSIA, p. 120--123, 27-28 June 2006.}
+
+\bibitem[Jamil, Yusoff e Yahya 2006]{ref9}
+\abntrefinfo{Jamil, Yusoff e Yahya}{JAMIL; YUSOFF; YAHYA}{2006}
+{JAMIL, A.; YUSOFF, M.~Z.; YAHYA, N. Small koch fractal antennas for wireless
+  local area network.
+\emph{Universiti Teknologi PETRONAS}, Perak, MALAYSIA, 2006.}
+
+\bibitem[Kountouriotis et al. 2008]{ref11}
+\abntrefinfo{Kountouriotis et al.}{KOUNTOURIOTIS et al.}{2008}
+{KOUNTOURIOTIS, J. et al. Reconfigurable antennas for mimo ad-hoc networks.
+\emph{2008 IEEE Radio and Wireless Symposium}, FLorida, EUA, p. 563 -- 566,
+  Janeiro 2008.}
+
+\bibitem[Mrabet 2011]{ref8}
+\abntrefinfo{Mrabet}{MRABET}{2011}
+{MRABET, O.~E. \emph{HFSS Tutorial}.
+[S.l.], 2011. Dispon{\'\i}vel em: $<$http://www.scribd.com$>$. Acesso em: 8
+  mar. 2011.}
+
+\bibitem[Na e Xiao-wei 2005]{ref2}
+\abntrefinfo{Na e Xiao-wei}{NA; XIAO-WEI}{2005}
+{NA, Y.; XIAO-WEI, S. Analysis of the multiband behavior on sierpinski carpet
+  fractal antennas.
+\emph{APMC2005 Proceedings}, Shaanxi, China, p. 70--74, 30 abr. 2005.}
+
+\bibitem[OLIVEIRA 2009]{ref4}
+\abntrefinfo{OLIVEIRA}{OLIVEIRA}{2009}
+{OLIVEIRA, E. E.~C. de. Antenas de microfita com patch quase fractal para
+  aplicações em redes wpan/wlan.
+\emph{Dissertação de Mestrado}, Natal,Brasil, 2009.}
+
+\bibitem[S.Yang et al. 2008]{ref10}
+\abntrefinfo{S.Yang et al.}{S.YANG et al.}{2008}
+{S.YANG et al. The design of microstrip patch antenna with four polarizations.
+\emph{2008 IEEE Radio and Wireless Symposium}, FLorida, EUA, p. 467 – 470,
+  Janeiro 2008.}
+
+\bibitem[Waqas, Ahmed e Ihsan 2006]{ref5}
+\abntrefinfo{Waqas, Ahmed e Ihsan}{WAQAS; AHMED; IHSAN}{2006}
+{WAQAS, M.; AHMED, Z.; IHSAN, M.~B. Multiband sierpinski fractal antenna.
+\emph{College of E&ME, National University of Sciences and Technology},
+  Pakistan, p. 30--35, 20 dec. 2006.}
+
+\end{thebibliography}

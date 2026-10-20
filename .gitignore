@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.aux
+*.log
+*.toc
+*.lof
+*.blg
+*.out
+*.o
+*.exe

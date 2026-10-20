@@ -1,0 +1,11 @@
+1/3 para L e 1/4 para W
+
+ A largura é W =  3.803629 cm
+ 
+ A largura/3 é W =  1.267876 cm
+ 
+ O comprimento é L = 2.947782 cm 
+ 
+ O comprimento/3 é L = 0.982594 cm 
+
+

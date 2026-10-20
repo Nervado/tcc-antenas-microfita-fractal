@@ -1,0 +1,874 @@
+
+%%%%%%%% CONCEITOS BASICOS %%%%%%%%%%%%%%%%%%%%
+\chapter{Conceitos Básicos Sobre Antenas} %Adicione mais capítulos após o este com o comando \chapter{NOME DE OUTRO CAPÍTULO}
+
+
+Para projetar qualquer antena é necessário conhecer as características eletromagnéticas que descrevem estes dispositivos. O principio básico de funcionamento de qualquer antena é transformar energia eletromagnética guiada por uma linha de transmissão em energia eletromagnética irradiada e vice-versa. 
+
+
+\section{Potência e Densidade de Potência}
+
+
+A potência irradiada da antena, no caso de uma antena transmissora é a potencia que é afetivamente transmitida ao espaço livre descontada às perdas elétricas e ôhmicas.
+A potência recebida, definida para uma antena receptora, é porção de radiação total que a antena consegue captar e é menor que a potencia disponível em seus terminais já que devem ser descontadas as perdas na estrutura e nos condutores.
+
+Existe uma relação entre a potência transmitida e a potência recebida por uma antena, tal relação é denominada formula de Friss:
+
+\begin{equation} \frac{P_r}{P_t} = G_t G_r \left( \frac{\lambda}{4 \pi R}\right)^2
+\label{fris}
+\end{equation}
+
+De acordo com (\ref{fris}), a potência irradiada recebida pela antena receptora depende de seu próprio ganho e do ganho da antena transmissora e cai com o quadrado da distância. Esta abordagem é valida para ambientes ideais com antenas em linha de visada sem obstrução das zonas de Fresnel.
+
+Considerando-se o espaço livre como a região completamente desobstruída e
+afastada do solo de modo que não existam obstáculos ou superfícies capazes de influir nos
+valores da onda eletromagnética irradiada ou recebida por uma antena. Sendo P a potência
+irradiada por uma antena isotrópica, a densidade de potência irradiada a uma distância r da
+antena será:
+
+\begin{equation} 
+S = \frac{P}{4 \pi r^2} (W/m^2)
+\label{densidade}
+\end{equation}
+
+Esta expressão mostra que em um ambiente desobstruído e sem perdas, a
+densidade de potência da onda eletromagnética é inversamente proporcional ao quadrado
+da distância. De acordo com a teoria eletromagnética, esta grandeza está relacionada com a
+intensidade do campo eletromagnético gerado no ponto do espaço em que está sendo
+realizada a medição.
+
+\section{Diagrama de Radiação}
+
+Nas antenas reais ocorrem direções preferenciais nas quais se tem uma maior
+densidade de potência irradiada e outras direções, nas quais, essa grandeza assume valores
+menores ou mesmo nulos. Assim, para um irradiador real, deve-se prever que a densidade
+de potência seja uma função da direção ($\theta ,\varphi$) do campo no espaço para a qual a onda é
+emitida. Portanto, uma generalização da equação anterior deve ser da forma:
+
+\begin{equation} 
+S(\theta ,\varphi) = S_{max} f_p (\theta,\varphi) 
+\label{gendens}
+\end{equation}
+
+A representação desta função é feita em gráficos tridimensionais ou em planos
+específicos, chamada diagrama de irradiação. A figura~\ref{diagrama} exibe um diagrama de radiação típico de uma antena. A comparação entre a densidade máxima de potência e a densidade média irradiada, que corresponde à densidade de potência da antena isotrópica, determina a diretividade da antena sob análise.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/diagrama.jpg} %Opções: width (largura em pt ou cm ou vezes se não houver unidade de medida), height (altura em pt, cm ou vezes se não houver unidade de medida), angle (rotação em graus), scale (escala em vezes 0.5= 50%,1.5=150%, etc )
+\end{center}
+%\begin{center}
+\caption[Diagrama de Radiação de um Dipolo]{Diagrama de Radiação de um Dipolo}
+%\end{center}
+\label{diagrama}
+\end{figure}  
+
+A diretividade indica a direção em que se concentra a energia irradiante da antena, ou ainda pode ser definida como a razão entre a intensidade da radiação em uma direção pela intensidade média de radiação total. Este parâmetro tem grande importância, pois revela a capacidade da antena e aplicações em que linha de visada é fundamental.
+  
+\begin{equation} D =\frac{U}{U_0} = \frac{4 \pi U}{P_{rad}}
+\label{diretividade}
+\end{equation}
+
+A equação (\ref{diretividade}), \citeonline{ref1}, fornece a definição matemática da diretividade, onde $U$ é a intensidade de radiação numa dada direção, $U_{0}$ é a intensidade média de radiação e $P$ a potência irradiada.
+
+\section{Dimensões Efetivas de uma Antena}
+
+O comprimento efetivo da antena é a porção de seu comprimento físico que participa do processo de irradiação dos campos "E" e "H". Dependendo da forma como a antena é polarizada, do ângulo da radiação incidente e da geometria da antena este parâmetro pode variar.
+De maneira análoga a área efetiva é a porção da área da antena que é ativada no momento da recepção ou da transmissão da radiação. Tal qual o comprimento efetivo, este parâmetro é sempre uma fração da área total da antena.
+
+\begin{equation} A_e = \frac{P_t}{W_i} = \frac{|I_t|^2 \frac{R_t}{2}}{W_i} 
+\label{areaefetiv}
+\end{equation}
+
+A equação (\ref{areaefetiv}) expressa a área efetiva de uma antena e demonstra a dependência da recepção 
+com a energia incidente que efetivamente contribui com o surgimento de corrente.
+
+\section{Modelagem de Antenas}
+
+Uma abordagem bastante empregada para analisar uma antena consiste em enxergá-la como uma linha de transmissão. Por esta abordagem o dispositivo a ser estudado pode ser modelado como um circuito elétrico. Aqui entram alguns parâmetros de grande importância na construção de antenas - a banda e a frequência de ressonância. A frequência de ressonância constitui a frequência principal para qual determinada antena foi projeta e usualmente indica também a frequência de operação do sistema de comunicação. A banda, por sua vez, indica a faixa de frequências em que um sinal a ser transmitido pela antena (ou recebido) pode variar.
+Existem muitas definições do que se pode chamar de banda passante, para antenas, adota-se o conceito de queda
+de amplitude de um sinal em 3 dB, ou seja, a frequência ou frequências em que o sinal cai ou sobe a partir da metade de seu valor máximo é considerada como sendo um ponto de delimitação da banda. Muitos outros métodos de analise são empregados na literatura dentre os mais conhecidos destacam-se:
+%%%%%%%%%%%%%%%
+%itens
+\begin{enumerate}
+\begin{enumerate}
+\item	Método dos potenciais de Hertz que consiste em um método analítico que usa potenciais auxiliares para resolver as equações de Maxwell determinando assim as características das antenas como frequência de ressonância, largura de banda e o aspecto do diagrama de radiação.
+\item	Métodos dos Momentos: Consiste em um método numérico para resolução de equações integrais complexas reduzindo-as a um conjunto de equações lineares. 
+\item	Métodos das Cavidades: Neste método uma antena de Microfita é considerada uma cavidade limitada abaixo e acima por planos condutores e lateralmente por paredes magnéticas. A partir desta abstração o comportamento dos modos de ressonâncias é observado com o objetivo de se determinar os parâmetros da antena.
+\item	Transformada Wavelet: Uma das mais recentes abordagens é a utilização das propriedades da Transformada Wavelet para a resolução das equações de Maxwell e a consequente determinação das propriedades das antenas.
+\end{enumerate}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%
+
+\section{Banda Passante e Casamento de Impedâncias}
+
+
+Em sistemas de comunicação sem fio, a banda de um dispositivo irradiante ocupa parte do espectro que se constitui em um recurso caro e cada vez mais escasso, é portanto cada vez mais comum a aplicação de antenas com restrições a pequenas faixas do espectro para tirar proveito de eventuais trechos disponíveis de frequências.
+
+Outro aspecto relevante no desenvolvimento de antenas é a questão do casamento de impedâncias. Considere a seguinte figura:
+ 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/reflexao.jpg} %Opções: width (largura em pt ou cm ou vezes se não houver unidade de medida), height (altura em pt, cm ou vezes se não houver unidade de medida), angle (rotação em graus), scale (escala em vezes 0.5= 50%,1.5=150%, etc )
+\end{center}
+%\begin{center}
+\caption[Reflexão de Onda Mecânica]{Exemplo de Reflexão de Onda Mecânica}
+%\end{center}
+\label{reflexao}
+\end{figure}  
+ 
+Na figura~\ref{reflexao}, a onda mecânica encontra dificuldade para se propagar para a parte mais grossa da
+corda, isto ocorre porque a parte mais grossa possui uma densidade maior. De modo similar, uma onda eletromagnética que percorre uma linha de transmissão, ou guia de onda, deve encontrar uma impedância uniforme durante seu trajeto. A antena é utilizada acoplada a um circuito elétrico e deve, portanto possuir uma impedância de entrada compatível com o resto do sistema. O descasamento de impedâncias entre dispositivos acoplados gera reflexões e atenuações nos sinais e reduz a performance geral de um sistema de comunicação sem fio.
+ 
+ 
+%%%%%%%%%%%%%%%% fim do primeiro capitulo %%%%%%%%%%%%%%%
+ 
+%%%%%%%%%%%%%%% ANTENAS DE MICROFITA %%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Antenas de Microfita}
+
+
+A estrutura de uma antena de Microfita foi originalmente proposta por Deschamps (1953). Tal dispositivo, em sua forma mais simples consiste de duas superfícies condutoras de baixíssima espessura separadas por um dielétrico. As antenas de Microfita são chamadas também de antenas impressas devido as suas características de dimensões e maleabilidade sendo inteiramente adequadas para aplicações em veículos em que uma forma flexível é determinante na montagem.
+
+
+
+\section{Vantagens e Desvantagens das Antenas de Microfita}
+
+
+As principais vantagens das antenas de Microfita largamente estudadas nos trabalhos acadêmicos são:
+\begin{enumerate}
+\begin{enumerate}
+\item Pequeno volume, dimensões reduzidas.
+\item	Processo de fabricação simplificado; em essência, o processo de fabricação de uma antena de Microfita assemelhasse a fabricação de circuitos integrados. Um substrato dielétrico pode receber a deposição de um material condutor em uma forma pré-definida (forma do PATCH). A forma do patch, assim como o material do substrato é determinante nas propriedades da antena.
+\item	O tipo de polarização da antena pode ser tanto circular quanto linear, sendo a polarização linear a mais utilizada. 
+\item	A alimentação da antena pode ser construída simultaneamente e diretamente acoplada à antena reduzindo eventuais problemas de casamento de impedâncias.
+\end{enumerate}
+\end{enumerate}  
+Tais dispositivos também apresentam algumas desvantagens às quais vêm sendo também extensivamente pesquisadas, dentre estas podemos destacar:
+\begin{enumerate}
+\begin{enumerate}
+\item	Baixa potência irradiada.
+\item Perdas elevadas.
+\item Largura de banda estreita se comparada com outros tipos de antena.
+\item Irradiação limitada a um hemisfério, a região do plano de terra da antena é considerada livre de irradiação.
+\end{enumerate}
+\end{enumerate}
+
+
+\section{A antena de Microfita com patch Retangular}
+
+
+Um tipo de antena de microfita largamente utilizado na Indústria é sem dúvida aquela cujo patch possui 
+forma retangular. A figura ~\ref{microfita} exibe um exemplo de antena de microfita com patch retangular. Este tipo de antena é relativamente simples de se modelar e analisar. A linha de microfita que aparece na figura citada tem como objetivo garantir o casamento de impedâncias entre a antena e o resto do sistema ao qual a mesma será
+acoplada.
+
+%figura da antena de microfita
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/microfita.png} %Opções: width (largura em pt ou cm ou vezes se não houver unidade de medida), height (altura em pt, cm ou vezes se não houver unidade de medida), angle (rotação em graus), scale (escala em vezes 0.5= 50%,1.5=150%, etc )
+\end{center}
+%\begin{center}
+\caption[Antena de Microfita com Patch Retangular]{Antena de Microfita com Patch Retangular}
+%\end{center}
+\label{microfita}
+\end{figure} 
+
+A reentrância na estrutura da antena da figura ~\ref{microfita} faz parte do projeto da alimentação juntamente com a linha de microfita supracitada e possui grande importância no controle da impedância de entrada da antena. O substrato das antenas de microfita pode ser construído com uma grande variedade de materiais ou mesmo metamateriais. No caso da utilização de materiais
+como fibra de vidro, epox, silicone e etc, a permissividade elétrica relativa do substrato varia entre $ 2.2 \le \epsilon_r \le 12.0 $. O aspecto mais desejável do substrato é que ele possua
+uma constante dielétrica que seja uniforme ao longo da estrutura o que implica melhor eficiência e banda passante mais larga.
+%citação aqui !!!!!!!!!!!!!!!!!
+
+\section{Modelagem como Linha de Transmissão}
+%citação !!!! 
+
+O método de análise adotado neste trabalho foi o método que trata a antena como uma linha de transmissão. Este modelo de análise não produz resultados tão eficientes como outros métodos de análise, no entanto, para o caso da antena com patch retangular tal análise apresenta desempenho aceitável em projetos iniciais por se tratar de uma estrutura com forma regular.
+
+
+O modelo da linha de transmissão consiste em representar a antena por dois slots separados por uma linha de 
+transmissão de baixa impedância $Z_c$ de comprimento L. Como as dimensões do Patch são finitas, os campos E e H 
+nas bordas da estrutura sofrem distorções. Estas distorções ou efeitos de borda (do inglês, "fringing effects")
+depende da altura do substrato e das dimensões do Patch. Para uma antena de microfita com a da figura(~\ref{microfita}), 
+as linhas de campo presentes na borda do Patch que partem em direção ao substrato sofrem um desvio de trajetória devido
+a diferença entre permissividades do ar e do substrato - efeito de borda. Este fenômeno faz com que a linha de microfita enxergue comprimento elétrico efetivo maior do que aquele relativo à suas dimensões físicas. Como algumas linhas de campo se dispersam pelo ar trona-se necessário definir uma permissividade efetiva e_{rff}.
+
+Uma formulação bastante utilizada para calcular a permissividade efetiva é dada pela equação (\ref{erf}).
+
+\begin{equation} 
+e_{rff}  = \frac{e_{r}+1}{2}  +  \frac{e_{r}-1}{2}\left[ 1 + 12\frac{h}{W} \right ]^{-\frac{1}{2}} 
+\label{erf}
+\end{equation}
+
+Devido as efeitos mencionados de dispersão de campos e de efeito de borda, o modelo da antena recebe a adição dos
+dois slots $\Delta L$ da figura ~\ref{linha}.O comprimento adicional enxergado  $\Delta L$ depende da razão $\frac{h}{W}$.
+
+%figura do modelo da linha de trasnmissao 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/linhadet.png} 
+\end{center}
+%\begin{center}
+\caption[Vista de cima do modelo da linha de transmissão]{Vista de cima do modelo da linha de transmissão}
+%\end{center}
+\label{linha}
+\end{figure} 
+
+A equação mais utilizada que fornece a dimensão $\Delta L$ é a seguinte:
+
+%equaçao do Delta L
+\begin{equation} 
+\frac{\Delta L}{h} = 0.412\frac{(e_{reff} + 0.3)(\frac{W}{h} + 0.264)}{(e_{reff} - 0.258)(\frac{W}{h} + 0.813)} 
+\label{deltaL}
+\end{equation}
+
+Assim o comprimento efetivo da antena pode ser calculado por:
+
+\begin{equation} 
+									L_{eff} = L + 2 \Delta L
+\label{Lefetivo}
+\end{equation}
+
+Para o modo fundamental de propagação transversal magnético a frequência de ressonância como
+função de L é dada pela equação (\ref{ressonancia}) modificada para incluir o comprimento efetivo dado por (\ref{Lefetivo}).
+
+\begin{equation} 
+								(f_{rc})_{010} = \frac{1}{2 L_{eff} \sqrt{e_{reff} \mu _0 \epsilon _0}}
+\label{ressonancia}
+\end{equation}
+
+Finalmente, através das equações (\ref{erf}), (\ref{deltaL}) ,  (\ref{Lefetivo}) , e  (\ref{ressonancia}), chega-se a equação 
+(\ref{largura}), onde $v_ 0$ é a velocidade da luz, $f_{r}$ é a frequência de ressonância desejada, $ \mu _0 $ é a permeabilidade magnética no vácuo e $ \epsilon _0 $ é a permissividade elétrica no vácuo. Através deste conjunto de equações é possível projetar as dimensões W e L para uma antena especificada.
+
+\begin{equation} 
+									W = \frac{v_0}{2f_r}\sqrt{\frac{2}{e_r + 1}}
+\label{largura}
+\end{equation}
+
+Vale salientar que pelo fato de o método de estudo fornecer soluções aproximadas espera-se que sejam detectadas eventuais discrepâncias entre a frequência especificada e aquela que será avaliada por simulações e eventualmente medições experimentais, contudo considera-se que tais discrepâncias não serão numericamente significativas e impeditivas à análise dos protótipos em estudo.
+
+\pagebreak
+\section{Método de Alimentação}
+
+Existe uma grande variedade de métodos de alimentação para antenas, sendo os mais conhecidas as técnicas
+de linha de microfita, conector coaxial e acoplamento indutivo.
+O método de alimentação escolhido para o projeto das estruturas é conhecido como "inset-feed" devido a 
+reentrância que é cortada no Patch. Este método é bastante simples de utilizar e simples de realizar ajustes, 
+em contrapartida introduz capacitâncias parasitas adicionais na antena, que reduzem o desempenho em frequência
+da mesma. Ainda assim, apresenta-se com opção praticável para protótipos de estudo.
+
+A comprimento da linha de microfita $ L_{0} $ é usualmente calculado como uma fração do comprimento de onda da frequência
+de ressonância central da antena. A largura da linha de microfita $w_{0}$ por sua vez influência mais pronunciadamente
+o valor da impedância da linha como um todo e é usualmente calculada pela formula (\ref{lalinha}) onte t é a altura da linha
+de microfita e h a altura do substrato.
+
+\begin{equation} 
+									Z_c = \frac{87}{\sqrt{e_r + 1.41}}\ln \left(\frac{5.98h}{0.8w + t}\right)
+\label{lalinha}
+\end{equation}
+
+O comprimento $y_{0}$ da reentrância é uma fator bastante crítico no casamento e é calculado com base nas formulas  
+(\ref{y}) e (\ref{r}), em que $R_{in}(0)$ é a resistência de entrada da antena na frequência de ressonância, $G_1$ é a condutância da abertura irradiante e $G_{12}$ é a condutância mutua entre os slots do modelo.
+
+
+\begin{equation} 
+									y_0 = \frac {L} {\pi} \arccos{\sqrt{\frac{50}{R_{in}(0)}}}
+\label{y}
+\end{equation}
+
+\begin{equation} 
+									R_{in}(0) = \frac {1} {2(G_{2} + G_{12})}
+\label{r}
+\end{equation}
+
+Os valores de $G_{1}$ e $G_{12}$ são dados pelas equações (\ref{g}) e (\ref{gm}), onde $ k_0 $ é o número de onda no
+espaço livre e $ J_0 $ a função de Bessel do primeiro tipo e ordem zero.
+
+\begin{equation} 
+G_{1} = \frac {1} {120 {\pi }^ 2} \int_{0}^{\pi} \left[\frac{\sin{\left(\frac{k_{0}W}{2} \cos{\theta}\right)}}{\cos{\theta}}\right]^2\sin{\theta}^3 d\theta
+\label{g}
+\end{equation}
+%( (1/(120*pi^2)) *  power(sin(x),3)  *  power (   (   sin(cos(x)*k*(W/2)) / cos(x)  ) ,  2   )   )
+\begin{equation} 
+G_{12} = \frac {1} {120 {\pi }^ 2} \int_{0}^{\pi} \left[\frac{\sin{\left(\frac{k_{0}W}{2} \cos{\theta}\right)}}{\cos{\theta}}\right]^2 J_0 (k_0L\sin{\theta}) \sin{\theta}^3 d\theta
+\label{gm}
+\end{equation}
+
+A figura ~\ref{microfita} indica as dimensões calculas por (\ref{y}) e (\ref{lalinha}). A medida do espaçamento
+$x_0$ é assumida como sendo igual a $w_0$.
+
+%figura do modelo da linha de trasnmissao 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/alim.png} 
+\end{center}
+%\begin{center}
+\caption[Antena de Microfita com Alimentação Inset-feed]{Antena de Microfita com Alimentação Inset-feed}
+%\end{center}
+\label{microfita}
+\end{figure} 
+
+
+%%até aqui ok
+
+%%%%%%%%%%%%%%%% fim do segundo %%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%% FRACTAIS %%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Fractais}
+
+A geometria fractal é um assunto recente da matemática e esta relacionado com campos de pesquisa extremamente atuais como a Teoria do Caos, Sistemas adaptativos e Redes Neurais. Existe uma dificuldade intrínseca ao tentar definir um fractal devido à falta de termos linguísticos apropriados. Segundo Mendelbrot (1975) Fractal é um "Um sistema organizado para o qual a dimensão de Hausdorff-Besicovitch excede estritamente a dimensão topológica (número inteiro que caracteriza a geometria de um objeto euclidiano - por exemplo: zero para um ponto, um para uma linha, etc.)", onde fractais cujas estruturas sejam ego-semelhantes, ou a dimensão de Hausdorff é igual à dimensão de Minkowski-Bouligand. Simplificando, o todo forma a parte e a parte forma o todo. A figura ~\ref{mandel} ilustra um exemplo de fractal gerado pela equação: $z_{n + 1} = z_n^2 + c$ .
+
+%inserir exemplo de fractal
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/fractal.png} 
+\end{center}
+%\begin{center}
+\caption[Exemplo de Fractal, Curva de Mandelbrot]{Exemplo de Fractal, Curva de Mandelbrot}
+%\end{center}
+\label{mandel}
+\end{figure} 
+
+Quando se explora o Conjunto de Mandelbrot com mais resolução, encontram-se sempre réplicas e mais réplicas do conjunto até o infinito. Esta é uma característica dos objetos fractais - autosimiliaridade. A riqueza de detalhes com que se pode visualizar a curva de Mandelbrot depende apenas da capacidade dos processadores utilizados.
+
+\section{Características dos Fractais} 
+
+Uma das principais características de um fractal é a autosimiliaridade, esta propriedade é indicada pelo fato de que qualquer segmento de um fractal possui a informação concernente a todo o resto da estrutura. A dimensão euclidiana de um fractal apresenta a característica intrigante de ser um numero não inteiro. A implicação direta deste fato é que, para uma estrutura geométrica euclidiana clássica como um patch quadrado irradiante de uma antena de Microfita considerada como uma estrutura bidimensional e com determinado comprimento elétrico efetivo, uma estrutura fractal, cujas dimensões dos limites fosse idêntica, apresentaria uma dimensão maior que 2D e consequentemente, um comprimento elétrico efetivo maior.
+
+\section{Método de Geração de Curvas Fractais}
+
+Seja qual for o processo de geração de um fractal, este processo deve envolver sempre algum tipo de fórmula recursiva ou transformação recursiva. Dentre os métodos conhecidos, destaca-se o método IFS como exemplo ilustrativo.
+
+O método IFS (\textit{Iterative Function System}) consiste em realizar um conjunto de transformações afins sobre um objeto inicial gerador que pode ser tanto uma simples reta como um outro objeto mais complexo. Considerando-se o conjunto de Cantor 
+(figura ~\ref{cantor} ) com exemplo, a geração iria iniciar com uma curva geradora que consiste na entrada da função que mapeia o conjunto de transformações que levam a construção de cada iteração, a saída de cada iteração por sua vez consiste na entrada a próxima.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/cantor.png} 
+\end{center}
+%\begin{center}
+\caption[Exemplo de Fractal, Conjunto de Cantor]{Exemplo de Fractal, Conjunto de Cantor}
+%\end{center}
+\label{cantor}
+\end{figure} 
+
+As transformações realizadas são matematicamente bem definidas como rotação, translação e contração. A forma de cada transformação afim é do tipo: $ x_n = Ax + B $. O conjunto de cantor seria então gerado na forma de (\ref{gerador}).
+
+\begin{equation} 
+									q(x,y) ={a \quad b \choose c \quad d}{x \choose y}+{e \choose f}
+\label{gerador}
+\end{equation}
+
+Onde a,b,c e d são parâmetros relacionados a escala da transformações afins de contração e expansão e, "e" e "f" parâmetros associados a rotação e a translação no $R^2$. Aplicando então (\ref{gerador}) ao conjunto obteríamos as expressões (\ref{a}) e (\ref{b}).
+
+\begin{equation} 
+									q_{1}(x) =\frac{x}{3}
+\label{a}
+\end{equation}
+
+\begin{equation} 
+									q_{2}(x) =\frac{x}{3} + \frac{2}{3}
+\label{b}
+\end{equation}
+
+\pagebreak
+
+\section{Aplicação no design de Antenas} 
+
+Sabe-se que o comprimento de uma antena é inversamente proporcional a sua frequência de ressonância, conclui-se que um patch fractal pode gerar antenas com frequências de ressonância menores que uma antena de Microfita com patch quadrado de dimensões idênticas. Este importante resultado indica que a miniaturização de antenas de Microfita pode ser realizada através da concepção de Paths fractais.
+
+%%citações muitas !!!
+
+Muitas propostas de aplicações tem sido realizadas  no meio acadêmico de aplicações de contornos fractais em antenas. Tais aplicações buscam explorar a capacidade de miniaturização das antenas e o efeito da aplicação das curvas fractais aos parâmetros de desempenho de antenas como banda passante, frequência de ressonância e casamento de impedâncias. Um exemplo de protótipo construído para validar a hipótese de miniaturização de antenas de microfita pode ser visto na figura ~\ref{antenaf}. 
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/antenaf.png} 
+\end{center}
+%\begin{center}
+\caption[Exemplo de Antena fractal]{Exemplo de Antena fractal}
+%\end{center}
+\label{antenaf}
+\end{figure} 
+
+Uma medida importante relacionada a medida do quanto uma curva fractal com determinada quantidade de iterações
+pode miniaturizar uma antena base é dada pela equação (\ref{mini}) e é conhecida como compressão de frequência.
+
+\begin{equation} 
+									CF = 100\%\frac{f_{rn}(GHz)}{f_{r}(GHz)}
+\label{mini}
+\end{equation}
+
+Onde CF é a compressão de frequência, ${f_{rn}$ é frequência medida da antena fractal em GHz e ${f_{r}$ é a frequência da antena
+base ou antena geradora em GHz.
+
+%%%%%%%%%%%%%%%% fim do terceiro capitulo %%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%% TÉCNICAS DE MONIATURIZAÇÂO %%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Técnica de Miniaturização}
+
+A miniaturização de uma antena consiste em projetar uma antena com dimensões menores porém  atendendo aos mesmos requisitos
+de uma antena maior, ou seja, o menor tamanho da nova antena não deve afetar o seu desempenho em termos de eficiência de radiação, frequência de ressonância e banda passante.
+
+As vantagens de se ter uma antena menor, além do menor espaço, estão 
+também ligadas a fabricação de arranjos de antenas. Com o grau de miniaturização aplicado por uma curva fractal, pode-se conseguir um arranjo de antenas menor e, portanto mais eficiente. Com o avanço atual das tecnologias de comunicações sem fio no que diz respeito à utilização de múltiplas antenas, a técnica de miniaturização ganha importância, pois abre espaço para novas estratégias de incremento de eficiência dos transceptores móveis.
+
+\section{Cortes Sucessivos}
+
+Uma forma de se obter uma antena fractal pode ser conseguida através de uma sucessão de cortes na estrutura do patch de modo 
+a reproduzir um fractal até certo numero de iterações. Uma técnica que faz cortes sucessivos é obviamente limitada pela tecnologia de fabricação empregada, de modo que, quanto mais preciso for o dispositivo de corte mais iterações se poderá realizar e consequentemente maior a eficiência da miniaturização.
+
+A figura ~\ref{sie} ilustra a técnica de cortes sucessivos para reprodução de uma antena que emula a curva de Sierpinksi, \cite{ref3}.
+As iterações estão assinaladas na ordem em que ocorrem. Nota-se claramente o nível de complexidade que consistiria a tentativa
+de realizar um número muito grande de iterações.
+
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/sie.png} 
+\end{center}
+%\begin{center}
+\caption[Exemplo de Antena fractal com curva de Sierpinksi]{Exemplo de Antena fractal com curva de Sierpinksi}
+%\end{center}
+\label{sie}
+\end{figure}
+
+
+\section{Dobramentos sucessivos}
+
+Quando a antena a se projetar consistir em um dipolo, por exemplo, é possível aplicar uma curva fractal através de uma sucessão de dobras ao longo do comprimento da antena de modo a se obter um perfil de curva fractal. Está técnica é interessante principalmente para estruturas irradiantes filamentares.
+
+Um problema com relação a esta técnica é a precisão com que as dobras são realizadas. Um fractal real possui dimensões com relações de proporção bem precisas o que pode implicar imperfeição no projeto de antenas fractais caso uma margem adequada de
+resolução não seja levada em consideração na confecção do dispositivo, \cite{ref7}.
+
+%\pagebreak
+
+\section{Aplicação da curva de Koch}
+
+A curva de Koch representa uma das mais conhecidas curvas fractais por sua semelhança, na forma triangular, com um floco de neve, \cite{ref6}. A antena da figura ~\ref{sie} é o resultado da aplicação desta curva a uma antena. A figura ~\ref{cons} indica o processo de construção da curva de Koch com 4 iterações partindo do nível 0.
+
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/cons.png} 
+\end{center}
+%\begin{center}
+\caption[Exemplo de construção da curva de Koch com 4 níveis]{Exemplo de construção da curva de Koch com 4 níveis de iteração}
+%\end{center}
+\label{cons}
+\end{figure}
+
+
+Como se pode ver na figura ~\ref{cons}, a curva pode ser obtida pela repartição em um terço de um seguimento base, seguido por uma rotação de \+ 60° e \- 60°para fechar a iteração. O processo é repetido em cada seguimento resultante da partição anterior e se repete indefinidamente ad-infinitum. Observa-se que o número de pontos que se necessita para descrever a estrutura cresce por um fator multiplicativo crescente o que implica dizer que a análise matemática pra uma estrutura irradiante que emula uma curva fractal cresce também em complexidade de modo equivalente.
+
+Uma variação de aplicação desta curva consiste em tomar um quadrado comum e retirar réplicas menores deste quadrado ao longo de seus lados. Esta é a técnica empregada no projeto das estruturas deste trabalho. Serão aplicados recortes ao patch da antena base ou geradora com 1/3 de comprimento L e 1/4 de largura W, ou seja, serão feitos cortes de 1/3 de L por 1/4 de W ao longo de três lados da antena base e ao longo dos lados da antena de nível 1 e 2.
+
+
+%%%%%%%%%%%%%%%% fim do quarto capitulo %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% Projeto das Estruturas %%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Projeto das Estruturas}
+
+Para os objetivos deste trabalho, escolheu-se realizar a análise de três antenas. A primeira antena consistindo na antena base
+foi projetada como possuindo um conhecido patch retangular e alimentação por linha de microfita com inset-feed. A segunda antena consiste na aplicação da curva de Koch em uma iteração e a segunda a aplicação da mesma curva com duas iterações.
+
+O projeto das estruturas foi realizado considerando as equações apresentadas no capítulo 2. O desenho dos Patchs foi criado usando o software Autocad. As estruturas desenhadas foram exportadas para o software de análise HFSS da Ansoft. Este software foi, portanto empregado para aferir o desempenho das antenas projetadas.
+
+A frequência escolhida para o projeto foi fixada em 2.4 GHz, este valor de frequência foi escolhido visando analisar a aplicabilidade dos protótipos na banda de frequências utilizadas por sistemas wireless. Espera-se uma redução na frequência de ressonância conforme o número de iterações da curva de Koch.
+
+A Impedância de entrada para qual as antenas foram projetadas é de $ 50\Omega $ visando um casamento eficiente com os sistemas de comunicações existentes. O material adotado para o substrato foi fibra de vidro com $\epsilon_{r} = 4.4$ e uma altura do substrato de 1.5 mm. A altura da linha de microfita, do patch e do plano de terra foi considerada como sendo 0.1 mm.
+
+
+\section{Programa para Cálculo de dimensões do Patch}
+
+Com o objetivo de tornar mais ágil o processo de cálculo das dimensões foi criado um pequeno programa em MatLab encontrar os valores relativos ao tamanho do patch de nível zero e as dimensões da linha de alimentação.
+
+O software foi programado também para gerar uma plotagem do patch calculado par auxílio da visualização do projeto. A figura
+~\ref{er} mostra a plotagem do resultado do calculo de uma antena com patch quadrado para a frequência de 2.4 GHz.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/er.jpg} 
+\end{center}
+%\begin{center}
+\caption[Plotagem de Saída do Aplicativo]{Plotagem de Saída do Aplicativo}
+%\end{center}
+\label{er}
+\end{figure}
+
+O software implementa as equações de design do capítulo 2 foi testado com testado com um exemplo de projeto extraído de \citeonline[p.~825]{ref1} mostrando valores idênticos de resultados aos valores contidos no exemplo.
+
+\pagebreak
+
+\section{Antena nível 0}
+
+A antena de nível zero teve como dimensões calculadas as indicadas na tabela ~\ref{table:especs}.
+
+%-----------------------------------------------------------
+
+%%%
+\begin{table}[h]
+\begin{center}
+\caption{Dimensões Especificadas para a Antena Base}
+\label{table:especs}
+\begin{tabular}{|c|c|c|}
+\hline
+Par{\^a}metro 		&Valor Especificado \\
+\hline
+W  &38.040 mm\\
+\hline
+L	&29.480 \\
+\hline
+$w_0$	 &2.68 mm\\
+\hline
+$x_0$	 &2.68 mm\\
+\hline
+$L_0$	 &11.63 mm\\
+\hline
+$y_0$	 &6.94 mm\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+%-----------------------------------------------------------
+
+Com as dimensões indicadas foi feito o desenho do Patch cujo aspecto pode ser visto na figura ~\ref{nivel0}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/proto_nivel0.png} 
+\end{center}
+%\begin{center}
+\caption[Antena Base]{Antena Base}
+%\end{center}
+\label{nivel0}
+\end{figure}
+
+O parâmetro $y_0$ calculado pelo aplicativo de cálculo era na verdade um pouco maior, mas foi redimensionado para aumentar
+o casamento de impedância não apenas no modelo base com em cada modelo de antena analisado.
+
+\section{Antena de nível 1}
+
+O Patch da antena de nível 1 foi desenhado aplicando a curva de Koch a três lados da estrutura. O lado da alimentação foi
+desconsiderado nos cortes para tentar preservar o casamento de impedâncias da antena. Foram recortados retângulos de 12.68 mm por 9.83 mm. A figura ~\ref{nivel1} exibe a configuração final do protótipo.
+
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/proto_nivel1.png} 
+\end{center}
+%\begin{center}
+\caption[Antena de Nível 1]{Antena de Nível 1}
+%\end{center}
+\label{nivel1}
+\end{figure}
+
+De maneira análoga ao protótipo de nível 0, parâmetro $ y_0 $ foi redimensionado, visto que por se tratar de uma estrutura com curva fractal as equações para cálculo do inset-feed não são mais válidas e o método empírico deve ser usado para prover um casamento de impedâncias aceitável. 
+
+É notável então que existirá uma assimetria na estrutura espera-se, contudo que o efeito desejado de miniaturização não seja proibitivamente reduzido de modo a invalidar o projeto.
+
+
+
+
+\section{Antena de nível 2}
+
+A antena de nível 2 foi desenhada aplicando cortes retangulares de 4.23 mm por 3.28 mm que correspondem a medidas 1/3 menores
+que as medidas de corte do nível 2. Desta vez, como o tamanho dos cortes é compatível com as dimensões da reentrância do inset-feed, optou-se por aplicar também a curva de Koch ao lado que possui a linha de microfita da alimentação. Contudo, este lado apresenta medidas diferentes dos demais justamente por causa do tipo de alimentação, deste modo calculou-se as medidas dos cortes deste lado como sendo 1/3 também de suas medidas iniciais.
+ 
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=1]{./figuras/proto_nivel2.png} 
+\end{center}
+%\begin{center}
+\caption[Antena de Nível 2]{Antena de Nível 2}
+%\end{center}
+\label{nivel2}
+\end{figure}
+
+Assim de modo similar ao patch de nível 1, o patch de nível 2 também apresenta alguma assimetria, sobretudo no lado da linha de microfita da alimentação, no entanto, espera-se que o desempenho esperado não seja prejudicado. A figura ~\ref{nivel2} exibe a configuração final do protótipo de nível 2.
+
+%%%%%%%%%%%%%%%% fim do quinto capitulo %%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%% Simulação %%%%%%%%%%%%%%%
+
+\chapter{Simulação}
+
+A simulação das estruturas foi realizada no HFSS, como já citado. Os Patchs desenhados em Autocad foram exportados para o HFSS
+para análise de desempenho. O método que é utilizado pelo software para análise é o método dos momentos. Foram configuradas simulações para 20 passos adaptativos de curva e limitada a quantidade pontos a 500 para não prolongar em demasia o tempo de cálculo e o esforço computacional.
+
+Para completar as estruturas  foram adicionados o plano de terra, o substrato, os limites de plotagem para os campos e a excitação emulada por uma porta com $50 \Omega$ de impedância.
+
+\section{Antena nível 0}
+
+O desenho da estrutura de nível zero pode ser visto na figura ~\ref{modelo1}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/modelbase.png} 
+\end{center}
+%\begin{center}
+\caption[Modelo da Antena Base no HFSS]{Modelo da Antena Base no HFSS}
+%\end{center}
+\label{modelo1}
+\end{figure}
+
+Com a construção do modelo completo foi realizada a análise da estrutura e aferição dos parâmetros de
+desempenho. A figura ~\ref{freq} exibe a plotagem das perdas de retorno para a antena de nível 0.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.4]{./figuras/freqbase.jpg} 
+\end{center}
+%\begin{center}
+\caption[Perdas de Retorno da Antena Base]{Perdas de Retorno da Antena Base}
+%\end{center}
+\label{freq}
+\end{figure}
+
+Observa-se diretamente da figura ~\ref{freq} o resultado satisfatório alcançado em relação a frequência de ressonância medida de
+2.3852 GHz com um erro de apenas 0.62 \% aproximadamente. A banda passante que foi medida em relação aos limites de queda em 10 dB foi avaliada em aproximadamente 80 MHz. O pico do ganho foi avaliado em 32.32 dB. 
+
+A figura ~\ref{smtbase} exibe a carta de Smith para a antena de nível 0.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/smtbase.jpg} 
+\end{center}
+%\begin{center}
+\caption[Carta de Smith para a Antena Base]{Carta de Smith para a Antena Base}
+%\end{center}
+\label{smtbase}
+\end{figure}
+
+Nota-se na figura ~\ref{smtbase} o efeito do casamento de impedâncias projetado, sendo o módulo da impedância de entrada aferido em torno de 0.9463 ou em valores de $\Omega$ com aproximadamente 47.32 $\Omega$. A figura ~\ref{ptrbase} ilustra 
+o diagrama de radiação normalizado com variação do angulo $\varphi$ para $\theta$ de 90°.  
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/ptrbase.jpg} 
+\end{center}
+%\begin{center}
+\caption[Diagrama de Radiação para a Antena Base]{Diagrama de Radiação para a Antena Base}
+%\end{center}
+\label{ptrbase}
+\end{figure}
+
+\section{Antena de nível 1}
+
+
+%%%%%
+O desenho da estrutura de nível 1 pode ser visto na figura ~\ref{modelo2}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/modeln1.png} 
+\end{center}
+%\begin{center}
+\caption[Modelo da Antena de nível 1 no HFSS]{Modelo da Antena de nível 1 no HFSS}
+%\end{center}
+\label{modelo2}
+\end{figure}
+
+Novamente, após a construção do modelo completo foi realizada a análise da estrutura e aferição dos parâmetros de
+desempenho. A figura ~\ref{freqn1} exibe a plotagem das perdas de retorno para a antena de nível 1.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.4]{./figuras/freqn1.jpg} 
+\end{center}
+%\begin{center}
+\caption[Perdas de Retorno da Antena de Nível 1]{Perdas de Retorno da Antena de Nível 1}
+%\end{center}
+\label{freqn1}
+\end{figure}
+
+Observa-se diretamente da figura ~\ref{freqn1} o resultado satisfatório alcançado em relação a frequência de ressonância medida de 1.6190 GHz com um fator de compressão de frequência CF de 67.46 \% aproximadamente, o que significa uma redução de 32.54\% na frequência de ressonância em relação a frequência da antena base. A banda passante que foi também medida em relação aos limites de queda em 10 dB foi avaliada em aproximadamente 50 MHz. O pico do ganho foi avaliado em 27.95 dB. 
+
+A figura ~\ref{smtn1} exibe a carta de Smith para a antena de nível 1.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/smtn1.jpg} 
+\end{center}
+%\begin{center}
+\caption[Carta de Smith para a Antena de Nível 1]{Carta de Smith para a Antena de Nível 1}
+%\end{center}
+\label{smtn1}
+\end{figure}
+
+Nota-se na figura ~\ref{smtn1} o efeito do casamento de impedâncias projetado, sendo o módulo da impedância de entrada aferido em torno de 1.01 ou em valores de $\Omega$ com aproximadamente  50.5 $\Omega$. A figura ~\ref{ptrn1} ilustra 
+o diagrama de radiação normalizado com variação do angulo $\varphi$ para $\theta$ de 90°.  
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/ptrn1.jpg} 
+\end{center}
+%\begin{center}
+\caption[Diagrama de Radiação para a Antena de Nivel 1]{Diagrama de Radiação para a Antena de Nivel 1}
+%\end{center}
+\label{ptrn1}
+\end{figure}
+%%%%
+
+\section{Antena de nível 2}
+
+
+%%%%%
+O desenho da estrutura de nível 2 pode ser visto na figura ~\ref{modelo3}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/modeln2.png} 
+\end{center}
+%\begin{center}
+\caption[Modelo da Antena de nível 2 no HFSS]{Modelo da Antena de nível 2 no HFSS}
+%\end{center}
+\label{modelo3}
+\end{figure}
+
+Assim, após a construção do modelo completo foi realizada a análise da estrutura e aferição dos parâmetros de
+desempenho. A figura ~\ref{freqn2} exibe a plotagem das perdas de retorno para a antena de nível 2.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.4]{./figuras/freqn2.jpg} 
+\end{center}
+%\begin{center}
+\caption[Perdas de Retorno da Antena de Nível 2]{Perdas de Retorno da Antena de Nível 2}
+%\end{center}
+\label{freqn2}
+\end{figure}
+
+Observa-se diretamente da figura ~\ref{freqn2} o resultado alcançado em relação a frequência de ressonância medida de 1.4883 GHz com um fator de compressão de frequência CF de 62.0\% aproximadamente, o que significa uma redução de 38.0\% na frequência de ressonância em relação a frequência da antena base. A banda passante que foi também medida em relação aos limites de queda em 10 dB foi avaliada em aproximadamente 45 MHz. O pico do ganho foi avaliado em 24.32 dB. 
+
+A figura ~\ref{sd} exibe a carta de Smith para a antena de nível 2.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/smtn2.jpg} 
+\end{center}
+%\begin{center}
+\caption[Carta de Smith para a Antena de Nível 2]{Carta de Smith para a Antena de Nível 2}
+%\end{center}
+\label{sd}
+\end{figure}
+
+  
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{./figuras/ptrn2.jpg} 
+\end{center}
+%\begin{center}
+\caption[Diagrama de Radiação para a Antena de Nivel 2]{Diagrama de Radiação para a Antena de Nivel 2}
+%\end{center}
+\label{pd}
+\end{figure}
+
+Nota-se na figura ~\ref{sd} o efeito do casamento de impedâncias projetado, sendo o módulo da impedância de entrada aferido em torno de 0.9957 ou em valores de $\Omega$ com aproximadamente  49.79 $\Omega$. A figura ~\ref{pd} ilustra 
+o diagrama de radição normalizado com variação do angulo $\varphi$ para $\theta$ de 90°.
+
+
+Do diagrama de radiação da figura ~\ref{pd} pode-se ver o lóbulo traseiro da antena. Este lóbulo surge porque o plano de terra
+da antena é finito, portanto algumas linhas de campo acabam por se dispersar para baixo da antena. 
+
+O diagrama de radiação indica para a antena de nível 2 a localização da energia irradiada da antena e se a mesma se encontra desperdiçando energia de radiação em direções não prioritárias.
+
+
+%%%%
+
+
+
+
+
+
+%%%% fim do capitulo 7
+
+%%%% ANÁLISE
+
+\chapter{Análise dos Resultados}
+
+
+Os resultados alcançados através de simulações forneceram indicações de desempenho favoráveis às estruturas 
+propostas. A frequência de ressonância das antenas foi progressivamente reduzida à medida que o número de iterações
+da curva de Koch crescia. Observou-se a máxima redução em frequência para o caso de nível 2 com 37.98\% de redução
+a partir de 2.4 GHz. Considerando que a área de uma antena com patch regular é inversamente proporcional à frequência, chega-se a conclusão que a miniaturização alcançou uma redução de aproximadamente 38\% da área. Este resultado indica que se desejássemos uma antena de 2.4 GHz poderíamos construí-la com uma área 38\% menor aplicando a curva de Koch.
+
+
+Observou-se que a Banda passante da Antena foi progressivamente reduzida, ainda que não em um nível inaceitável a medida que as
+iterações aumentaram. Este resultado já foi observado em outras propostas de trabalho e indica que o processo de miniaturização 
+reduz a banda final da antena. Este fenômeno deve-se, provavelmente, ao surgimento de capacitâncias entre as novas reentrâncias da estrutura e o substrato que tem como efeito final a redução da banda.
+
+O casamento de impedâncias foi refeito para todas as antenas realizadas, pois a aplicação da curva torna ineficientes as fórmulas empregas, ainda que estas sirvam ao importante propósito de determinar a sintonia inicial da reentrância do inset-feed. Do mesmo modo que a redução da banda, o casamento de impedâncias foi, provavelmente, também levemente alterado pela forma das estruturas. Os resultados para os casamentos indicam que estes podem ser melhorados através de uma série de testes empíricos para determinar novos comprimentos de $y_0$.
+
+%sobre a frequencia
+%sobre a banda
+%sobre a impedacncia
+%sobre a
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modelo para escrever TCCs, dissertações e teses utilizando LaTeX, ABNTeX e BibTeX
+% Autor/E-Mail: Robinson Alves Lemos/contato@robinson.mat.br/robinson.a.l@bol.com.br
+% Data: 19/04/2008 
+% Colaboradore(s)/E-Mail(s):
+% Caso queira colaborar, entre em contato pelo e-mail e informe alterações que realizou.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%% Exemplos %%%%%%%%%%%%%%%%%
+% TODO O CONTEÚDO DESTE CAPÍTULO É EXEMPLO!!!
+% TROQUE PELO SEU PRÓPRIO CONTEÚDO!!!
+%
+% Este capítulo de exemplo mostra como utilizar algumas funcionalidades do \LaTeX, como por exemplo:
+% Figuras, referências cruzadas, referências bibliográficas, etc...
+
+%\section{Figuras}
+%Podemos observar um exemplo na figura~\ref{fig01}.
+
+%\begin{figure}[ht] % [especificador de posição]:exemplos [htbp] - h:aqui, t:topo, b:baixo, p:página especial, !: desconsiderar parâmetros internos teste.jpg
+%\begin{center}
+%\includegraphics[scale=1]{./figuras/proto_nivel2.png} %Opções: width (largura em pt ou cm ou vezes se não houver unidade de medida), height (altura em pt, cm ou vezes se não houver unidade de medida), angle (rotação em graus), scale (escala em vezes 0.5= 50%,1.5=150%, etc )
+%\end{center}
+ 
+%\caption[Nome Curto da figura (aparece na Lista de Figuras)]{Nome Longo para a figura}
+%\label{fig01}
+%\end{figure}
+
+%\section{Referências}
+
+%Exemplos para citar referências. Um exemplo em \cite{ref1}. Ou utilizamos \cite[p.~35]{ref1}.
+
+%Quando for citar explicitamente o autor da referência, utilize: De acordo com \citeonline{ref8} temos (\ldots). Outra forma: De acordo com \citeonline[p.~15]{ref8} temos (\ldots). Ainda podemos ter: De acordo com \citeonline[p.~15--17]{ref8} temos (\ldots). 
+
+%Para fazer uma citação longa (Com mais de três linhas) utilize:
+
+%\begin{citacao}
+%Mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono mono \cite[p.~14--15]{ref1}.
+%\end{citacao}
+
+%A citação longa deve vir em parágrafo separado, com recuo de 4 cm da margem esquerda, em fonte menor, sem as aspas e com espaçamento simples
+
+%conforme \cite{ref8}
+
+%conforme \cite{ref4}
+
+%\section{Texto Matemático}
+
+%Utilize \$ para inciar e finalizar o modo matemático\footnote{nota de rodapé} dentro de um texto não matemático e \$\$ para inciar e finalizar o modo matemático centralizado (Fórmulas). Exemplo dentro de um texto não matemático: Sejam $a$ e $b$ dois números reais não nulos, logo $a^{b+a} = a^b a^a$. Agora segue um exemplo de modo matemático centralizado: $$\int_a^b f(x) dx = 56.$$
+
+%Abaixo temos um exemplo de proposição com sua demonstração:
+%\begin{proposicao}
+ %Sejam $a$ e $b$ reais, tais que $0<a<b$. Então $a^2<b^2$.
+%\end{proposicao}
+%\begin{demonstracao}
+% Pela hipótese concluímos que $(b+a)>0$ e $(b-a)>0$. 
+
+%Como $b^2-a^2=(b+a)(b-a)$ concluímos que $b^2-a^2>0$, ou seja, $a^2<b^2$.
+%\end{demonstracao}
