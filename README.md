@@ -31,6 +31,16 @@ O estudo de miniaturização de antenas de microfita surge como alternativa para
 - O programa em `calculos/main.c` foi escrito no Dev-C++ (Windows); compila com qualquer compilador C: `cc main.c -lm -o contas`.
 - O material de terceiros consultado no trabalho (artigos IEEE, livros e dissertações) **não** está incluído; ver as referências no TCC.
 
+## Notas de revisão (2026)
+
+Releitura feita em outubro de 2026. O texto original de 2011 foi mantido **intacto**; as observações abaixo apenas registram pontos que hoje seriam escritos de outra forma.
+
+1. **"Pico do ganho" (seções 6.1–6.3).** Os valores de 32,32 dB, 27,95 dB e 24,32 dB são o módulo da **perda de retorno** (|S11| na ressonância), não o ganho da antena. O ganho de uma antena patch desse tipo fica tipicamente na faixa de alguns dBi.
+2. **Método numérico do HFSS (cap. 6).** O HFSS resolve as equações de Maxwell pelo **método dos elementos finitos (FEM)**, e não pelo método dos momentos.
+3. **Miniaturização em área (cap. 7).** A área de um patch escala com o **inverso do quadrado** da frequência de ressonância (as duas dimensões escalam com 1/f). A redução de ~38% na ressonância (2,385 → 1,488 GHz) corresponde, portanto, a uma antena de **~62% menos área** para a mesma frequência — o resultado do trabalho era melhor do que o estimado no texto.
+
+Outros detalhes menores: os diagramas de radiação foram plotados em 2,4/1,4/1,5 GHz e não exatamente nas ressonâncias de cada antena; o programa de cálculo é citado como MATLAB, mas a versão arquivada em `calculos/` é em C; os resultados são apenas de simulação (a medição de protótipos ficou como trabalho futuro).
+
 ## Licença
 
 - Texto, figuras, slides, relatórios e desenhos: [CC BY 4.0](LICENSE-CC-BY-4.0.md)
